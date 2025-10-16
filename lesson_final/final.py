@@ -57,7 +57,6 @@ def roman_to_int(s: str) -> int:
             raise ValueError(f"Слишком много повторений {run_char}")
 
     # Доп. запрет: нельзя ставить ДВА одинаковых меньших перед большим (IIX, XXL, CCD и т.п.)
-    # Проверяем шаблон s[i] == s[i+1] и s[i] < s[i+2]
     for i in range(len(s) - 2):
         a, b, c = s[i], s[i + 1], s[i + 2]
         if a == b and values[a] < values[c]:
